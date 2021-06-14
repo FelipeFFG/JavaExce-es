@@ -1,7 +1,5 @@
 package ConteudosAula4;
 
-import ConteudosAulas123.Funcionario;
-import ConteudosAulas123.Gerente;
 
 public class TesteContas {
 

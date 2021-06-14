@@ -20,23 +20,16 @@ public abstract class Conta {
          // System.out.println("estou criando uma conta " + this.numero);
      }
      
-     public boolean transeferir(Conta usuario,double valor){    //transferir valor para outra conta
-          if (saldo <valor){
-               return false;
-          }else{
-               usuario.depositar(valor);
-               sacar(valor);
-               return true;
-          }
+     public void transeferir(Conta usuario, double valor) {    //transferir valor para outra conta
+          this.sacar(valor);
+          usuario.depositar(valor);
      }
 
-     public boolean sacar(double valor){         //sacar o dinheiro
-          if (saldo < valor){
-               return false;
-          }else {
-               saldo -=valor;
-               return true;
+     public void sacar(double valor){                          //sacar o dinheiro
+          if (this.saldo < valor){
+               throw new SaldoInsuficienteException("Saldo: "+ this.saldo + ", Valor: " + valor);
           }
+          this.saldo -=valor;
      }
 
      public double getSaldo(){

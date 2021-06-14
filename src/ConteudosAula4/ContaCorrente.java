@@ -13,9 +13,9 @@ public class ContaCorrente extends Conta implements Tributavel{  //herda os atri
     }
 
     @Override
-    public boolean sacar(double valor) {
+    public void sacar(double valor) {
         double valorASacar = valor + 0.2;
-        return super.sacar(valorASacar);
+        super.sacar(valorASacar);
     }
 
     @Override
