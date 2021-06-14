@@ -4,7 +4,7 @@ public class Fluxo {
         System.out.println("Ini do main");
         try {
             metodo1();
-        } catch (ArithmeticException |NullPointerException |MinhaExcecao ex) {   //ex é uma referencia da classe da exceção
+        } catch (Exception ex) {                                                //Como toda exceção extende a classe Exception, é possivel chamar uma referencia do tipo Exception que abrange todas as exceções.
             String msg = ex.getLocalizedMessage();                               //pega a mensagem de erro.
             System.out.println("Exception " + msg);
             ex.printStackTrace();                                               //printa o rastro do erro.
@@ -18,7 +18,7 @@ public class Fluxo {
         System.out.println("Fim do metodo1");
     }
 
-    private static void metodo2() throws MinhaExcecao{      //a exceção fica esplicito no metodo quando damos extends em Exception
+    private static void metodo2() throws MinhaExcecao{      //a exceção fica explicito no metodo quando damos extends em Exception
         System.out.println("Ini do metodo2");
         throw  new MinhaExcecao("deu muito errado");
         //System.out.println("Fim do metodo2");

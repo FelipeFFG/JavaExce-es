@@ -4,7 +4,7 @@ public class FluxoComErro {
         System.out.println("Ini do main");
         try {
             metodo1();
-        } catch (ArithmeticException |NullPointerException  ex) {   //ex é uma referencia da classe da exceção
+        } catch (ArithmeticException |NullPointerException ex) {   //ex é uma referencia da classe da exceção
             String msg = ex.getLocalizedMessage();              //pega a mensagem de erro.
             System.out.println("Exception " + msg);
             ex.printStackTrace();                               //printa o rastro do erro.
