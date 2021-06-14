@@ -1,4 +1,4 @@
-package ConteudosAula4;
+package ByteBank;
 
 public class TesteTributaveis {
     public static void main(String[] args) {

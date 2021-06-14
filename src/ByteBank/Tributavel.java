@@ -1,4 +1,4 @@
-package ConteudosAula4;
+package ByteBank;
 
 public interface Tributavel {
 

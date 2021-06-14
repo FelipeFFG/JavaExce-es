@@ -1,4 +1,4 @@
-package ConteudosAula4;
+package ByteBank;
 
 public abstract class Conta {
 
@@ -20,12 +20,12 @@ public abstract class Conta {
          // System.out.println("estou criando uma conta " + this.numero);
      }
      
-     public void transeferir(Conta usuario, double valor) {    //transferir valor para outra conta
+     public void transeferir(Conta usuario, double valor)throws SaldoInsuficienteException {    //transferir valor para outra conta
           this.sacar(valor);
           usuario.depositar(valor);
      }
 
-     public void sacar(double valor){                          //sacar o dinheiro
+     public void sacar(double valor) throws SaldoInsuficienteException{                          //sacar o dinheiro
           if (this.saldo < valor){
                throw new SaldoInsuficienteException("Saldo: "+ this.saldo + ", Valor: " + valor);
           }

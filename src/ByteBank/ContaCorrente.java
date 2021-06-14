@@ -1,4 +1,4 @@
-package ConteudosAula4;
+package ByteBank;
 
 
 
@@ -13,7 +13,7 @@ public class ContaCorrente extends Conta implements Tributavel{  //herda os atri
     }
 
     @Override
-    public void sacar(double valor) {
+    public void sacar(double valor)throws SaldoInsuficienteException {
         double valorASacar = valor + 0.2;
         super.sacar(valorASacar);
     }
