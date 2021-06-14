@@ -4,24 +4,23 @@ public class Fluxo {
         System.out.println("Ini do main");
         try {
             metodo1();
-        } catch (ArithmeticException |NullPointerException ex) {   //ex é uma referencia da classe da exceção
-            String msg = ex.getLocalizedMessage();              //pega a mensagem de erro.
+        } catch (ArithmeticException |NullPointerException |MinhaExcecao ex) {   //ex é uma referencia da classe da exceção
+            String msg = ex.getLocalizedMessage();                               //pega a mensagem de erro.
             System.out.println("Exception " + msg);
-            ex.printStackTrace();                               //printa o rastro do erro.
+            ex.printStackTrace();                                               //printa o rastro do erro.
         }
         System.out.println("Fim do main");
     }
 
-    private static void metodo1() {
+    private static void metodo1() throws MinhaExcecao{
         System.out.println("Ini do metodo1");
         metodo2();
         System.out.println("Fim do metodo1");
     }
 
-    private static void metodo2() {
+    private static void metodo2() throws MinhaExcecao{      //a exceção fica esplicito no metodo quando damos extends em Exception
         System.out.println("Ini do metodo2");
-        throw  new ArithmeticException("deu errado");
-
+        throw  new MinhaExcecao("deu muito errado");
         //System.out.println("Fim do metodo2");
     }
 }
